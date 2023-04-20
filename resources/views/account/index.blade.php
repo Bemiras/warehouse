@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
+@section('title', __('Change Password' ))
+
 @section('content')
     <div class="container-fluid">
-        <h1 class="text-black-50">You are logged in!</h1>
+        <order-create></order-create>
     </div>
 @endsection

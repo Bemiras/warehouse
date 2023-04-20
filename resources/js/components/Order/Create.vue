@@ -1,12 +1,12 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-12">
                 <div class="card">
-                    <div class="card-header">Example Component</div>
+                    <div class="card-header">Zmień hasło</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        Tutaj możesz zmienić swoje hasło
                     </div>
                 </div>
             </div>
