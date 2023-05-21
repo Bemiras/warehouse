@@ -32,5 +32,6 @@
     "Save" : "Zapisz",
     "Back" : "Cofnij",
     "Category" : "Kategorie",
-    "Superior Category" : "Nadrzędna Kategoria"
+    "Superior Category" : "Nadrzędna Kategoria",
+    "Category deleted successfully" : "Pomyślnie usunięto kategorię"
 }

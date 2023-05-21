@@ -66,26 +66,6 @@ class CategoryController extends Controller
         return redirect(route('categories.index'));
     }
 
-//    /**
-//     * Display the specified User.
-//     *
-//     * @param int $id
-//     *
-//     * @return Response
-//     */
-//    public function show($id)
-//    {
-//        $user = $this->userRepository->find($id);
-//
-//        if (empty($user)) {
-//            Flash::error('User not found');
-//
-//            return redirect(route('users.index'));
-//        }
-//
-//        return view('users.show')->with('user', $user);
-//    }
-//
     /**
      * Show the form for editing the specified Category.
      *
@@ -131,30 +111,30 @@ class CategoryController extends Controller
 
         return redirect(route('categories.index'));
     }
-//
-//    /**
-//     * Remove the specified User from storage.
-//     *
-//     * @param int $id
-//     *
-//     * @throws \Exception
-//     *
-//     * @return Response
-//     */
-//    public function destroy($id)
-//    {
-//        $user = $this->userRepository->find($id);
-//
-//        if (empty($user)) {
-//            Flash::error('User not found');
-//
-//            return redirect(route('users.index'));
-//        }
-//
-//        $this->userRepository->delete($id);
-//
-//        Flash::success('User deleted successfully.');
-//
-//        return redirect(route('users.index'));
-//    }
+
+    /**
+     * Remove the specified User from storage.
+     *
+     * @param int $id
+     *
+     * @throws \Exception
+     *
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $category = $this->categoryRepository->find($id);
+
+        if (empty($category)) {
+            \flash(__('Category not found'))->error();
+
+            return redirect(route('categories.index'));
+        }
+
+        $this->categoryRepository->delete($id);
+
+        \flash(__('Category deleted successfully'))->success();
+
+        return redirect(route('categories.index'));
+    }
 }

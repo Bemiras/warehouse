@@ -11,13 +11,9 @@
             <tr>
                 <td>{{ $category->name }} </td>
                 <td>{{ $category->category->name ?? ' - ' }}  </td>
-                <td>{!! App\Helpers\Helper::renderAnswer($category->is_active)  !!}</td>
+                <td>{!! App\Helpers\Helper::renderAnswer($category->is_active) !!}</td>
                 <td>
                     <div class='btn-group'>
-                        <a href="{{ route('categories.show', [$category->id]) }}" class='btn btn-sm btn-default mr-1'>
-                            <i class="fa fa-eye"></i>
-                        </a>
-
                         <a href="{{ route('categories.edit', [$category->id]) }}" class='btn btn-sm btn-default mr-1'>
                             <i class="fas fa-pen"></i>
                         </a>
@@ -37,8 +33,6 @@
     {{ $categories->appends(['filters' => $filters])->links('common-components/pagination') }}
 
 </div>
-@include('common-components.delete-popup', ['name' => __('Category')])
+{{--@include('common-components.delete-popup', ['name' => __('Category')])--}}
 
-@push('page_scripts')
-    <script src="{{ mix('/js/app.js') }}"></script>
-@endpush
+@include('common-components.delete-popup')

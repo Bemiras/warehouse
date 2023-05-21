@@ -24,24 +24,17 @@
                         <div class="card-body">
                             <div class="row mb-2">
                                 <div class="col-md-10">
-                                    <div class="form-inline float-md-end mb-3">
-                                        <div class="ms-2">
-                                            <div class="position-relative">
-                                                <form action="{{ route('categories.index') }}" class="row row-cols-lg-auto gx-3 gy-2 align-items-end">
-                                                    <div class="col-6">
-                                                        {!! Form::text('filters[query]', $filters['query'] ?? null, ['id' => 'queryValue', 'class' => 'form-control rounded bg-light border-0 float-left', 'placeholder' => __('Search')]) !!}
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <button type="submit" class="btn btn-sm btn-secondary">
-                                                            <i class="nav-icon fas fa-search" ></i>
-                                                        </button>
-                                                        @if (isset($filters['query']))
-                                                            <a href="{{ route('categories.index') }}" class="btn btn-sm btn-outline-secondary waves-effect">{{__('Clear')}}</a>
-                                                        @endif
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+                                    <div class="form-inline">
+                                        <form action="{{ route('categories.index') }}" class="row row-cols-lg-auto gx-3 gy-2 align-items-end">
+                                                {!! Form::text('filters[query]', $filters['query'] ?? null, ['id' => 'queryValue', 'class' => 'form-control rounded bg-light border-0 float-left', 'placeholder' => __('Search')]) !!}
+
+                                                <button type="submit" class="btn btn-secondary mr-1">
+                                                    <i class="nav-icon fas fa-search"></i>
+                                                </button>
+                                                @if (isset($filters['query']))
+                                                    <a href="{{ route('categories.index') }}" class="btn btn-outline-secondary waves-effect">{{__('Clear')}}</a>
+                                                @endif
+                                        </form>
                                     </div>
                                 </div>
 

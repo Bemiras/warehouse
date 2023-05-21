@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Config;
 
 class CreateCategoryRequest extends FormRequest
 {
@@ -29,5 +30,22 @@ class CreateCategoryRequest extends FormRequest
        ];
 
         return $rules;
+    }
+
+    public function messages()
+    {
+        if ( Config::get('app.locale') == 'pl') {
+            $messages = [
+                'name.required' => 'Nazwa jest wymagana',
+                'name.unique' => 'Nazwa jest już zajęta'
+            ];
+        } else {
+            $messages = [
+                'name.required' => 'Name field is required',
+                'name.unique' => 'Name field must by unique'
+            ];
+        }
+
+        return $messages;
     }
 }
