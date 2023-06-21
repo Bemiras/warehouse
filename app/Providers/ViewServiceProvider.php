@@ -25,7 +25,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         // Categories
-        View::composer(['categories.fields'], function ($view) {
+        View::composer(['categories.fields', 'products.fields'], function ($view) {
             $categories = Category::orderBy('name')->pluck('name', 'id')->toArray();
             $view->with('allCategories', $categories);
         });
